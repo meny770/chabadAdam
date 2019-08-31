@@ -24,9 +24,9 @@ app.use(bodyParser.json());
 app.use(cookieParser())
 // app.use(cors);
 
-app.use(express.static(path.join(__dirname, './client/build')))
+app.use(express.static(path.join(__dirname, './build')))
 app.get('*/', (req, res) => {
-     res.sendFile(path.resolve('./client/build/index.html'))
+     res.sendFile(path.resolve('./build/index.html'))
 } )
 // app.use(session({
 //     secret: "secret",
@@ -69,7 +69,7 @@ app.get('*/', (req, res) => {
 // })
 
 
-app.use(route)
+// app.use(route)
 
 
 app.listen(port, ()=>console.log(`listen to port ${port}`))
